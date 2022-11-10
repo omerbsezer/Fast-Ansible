@@ -75,4 +75,43 @@ ansible all -m gather_facts
 ansible all -m gather_facts --limit 172.26.215.23
 ```
 
+- Run "sudo apt update" for all nodes using ansible
+- As it is seen in the printscreen, it does not work. 
+
+```
+ansible all -m apt -a update_cache=true
+```
+
+![image](https://user-images.githubusercontent.com/10358317/201094159-89918be8-1d73-4a10-b346-4d54a1bc104f.png)
+
+- The reason why "sudo apt update" does not work is to enter "sudo" password for all nodes.
+- For now, we are assigning same password for all nodes (node1, node2). Later, it will be shown for different passwords.
+
+```
+sudo passwd ubuntu
+```
+
+![image](https://user-images.githubusercontent.com/10358317/201094654-23381802-43a2-4261-892b-900244019bcc.png)
+![image](https://user-images.githubusercontent.com/10358317/201094744-d8edfd82-9c5a-4bb8-9fc5-7e9f5f4567c1.png)
+![image](https://user-images.githubusercontent.com/10358317/201094827-5ddd50dd-bd26-47b9-b266-5d997678774b.png)
+
+- Run "sudo apt update" for all nodes using "BECOME PASS", enter the common password when it asks
+
+```
+ansible all -m apt -a update_cache=true --become --ask-become-pass
+```
+
+![image](https://user-images.githubusercontent.com/10358317/201095106-cfa74f25-9ae6-4ca2-b34a-061ed5d6622d.png)
+
+- Install specific package "sudo apt get snapd"
+
+```
+ansible all -m apt -a name=snapd --become --ask-become-pass
+# latest version
+ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
+```
+
+![image](https://user-images.githubusercontent.com/10358317/201097511-9b0893f5-120c-4af1-be6d-a35fc15681a5.png)
+
+
 
