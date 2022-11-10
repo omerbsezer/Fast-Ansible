@@ -48,4 +48,10 @@ ansible-playbook --ask-become-pass install_apache.yml
 
 ![image](https://user-images.githubusercontent.com/10358317/201103096-a62b7d08-1208-485f-8bd4-de5b5c7b1e06.png)
 
+- If you enter "never-existed-tect-package" as apt name, you can see that it cannot install on the nodes, because it does not exist.
+
+![image](https://user-images.githubusercontent.com/10358317/201104092-7a38235c-1a48-4f16-8c2e-9269be6d7faa.png)
+
+![image](https://user-images.githubusercontent.com/10358317/201103961-7a10a711-d6e4-4aac-b05c-f5d5172f25ad.png)
+
 
