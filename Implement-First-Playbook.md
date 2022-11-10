@@ -54,4 +54,63 @@ ansible-playbook --ask-become-pass install_apache.yml
 
 ![image](https://user-images.githubusercontent.com/10358317/201103961-7a10a711-d6e4-4aac-b05c-f5d5172f25ad.png)
 
+- Add "apt update" and install other packages
+
+``` 
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository index
+    apt:
+      update_cache: yes
+
+  - name: install apache2 package
+    apt:
+      name: apache2
+
+  - name: add php support for apache
+    apt:
+      name: libapache2-mod-php
+``` 
+
+![image](https://user-images.githubusercontent.com/10358317/201105158-4b3e598b-0726-444f-8844-ee99fc8f8d82.png)
+
+``` 
+ansible-playbook --ask-become-pass install_apache.yml
+``` 
+
+![image](https://user-images.githubusercontent.com/10358317/201105473-2697a57a-4334-484f-97d9-501452007259.png)
+
+- Add "state: latest" to install latest version of the app
+
+``` 
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository index
+    apt:
+      update_cache: yes
+
+  - name: install apache2 package
+    apt:
+      name: apache2
+      state: latest
+
+  - name: add php support for apache
+    apt:
+      name: libapache2-mod-php
+      state: latest
+```
+
+![image](https://user-images.githubusercontent.com/10358317/201106278-537221bf-878a-4ee3-b211-83e9e52e252f.png)
+
+
+
+
 
