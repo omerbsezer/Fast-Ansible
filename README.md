@@ -1,5 +1,5 @@
 # Fast-Ansible
-This repo covers Ansible with LABs: Multipass, Ssh, Commands, Playbooks, Modules, etc.
+This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbook, and details.
 
 **Keywords:** Ansible, Multi-PC Configuration.
 
