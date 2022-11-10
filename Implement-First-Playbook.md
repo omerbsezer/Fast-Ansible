@@ -110,7 +110,39 @@ ansible-playbook --ask-become-pass install_apache.yml
 
 ![image](https://user-images.githubusercontent.com/10358317/201106278-537221bf-878a-4ee3-b211-83e9e52e252f.png)
 
+- Create "remove_apache.yml" to uninstall apps.
+- Use "state:absent" to uninstall.
 
+``` 
+---
 
+- hosts: all
+  become: true
+  tasks:
 
+  - name: remove apache2 package
+    apt:
+      name: apache2
+      state: absent
 
+  - name: add php support for apache
+    apt:
+      name: libapache2-mod-php
+      state: absent
+```
+
+![image](https://user-images.githubusercontent.com/10358317/201107052-4e2c2d50-d7e7-44dd-8352-bd91f7e7be6b.png)
+
+``` 
+ansible-playbook --ask-become-pass remove_apache.yml
+``` 
+
+![image](https://user-images.githubusercontent.com/10358317/201107516-ff2b2337-a01c-401d-af0a-177ac38c58c7.png)
+
+- When browsing IP to see whether apache2 works or not, it is seen that apache2 server was uninstalled.
+
+![image](https://user-images.githubusercontent.com/10358317/201107771-df10bf6e-367c-4235-a779-2703958b8774.png)
+
+### Reference
+
+- https://www.youtube.com/watch?v=VANub3AhZpI&list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70&index=6
