@@ -10,7 +10,6 @@ This repo covers Ansible with LABs: Multipass, Ssh, Commands, Playbooks, Modules
 # Table of Contents
 - [Motivation](#motivation)
 - [What is Ansible?](#whatIsAnsible)
-    - [Kubernetes Architecture](#architecture)
 - [Ansible Basic Commands](#modules)    
 - [Ansible Modules](#modules)
 - [Ansible Playbooks](#playbooks)
