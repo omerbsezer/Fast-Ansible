@@ -4,7 +4,7 @@ This repo covers Ansible with LABs: Multipass, Ssh, Commands, Playbooks, Modules
 **Keywords:** Ansible, Multi-PC Configuration.
 
 # Hands-on LABs
-- [LAB: Multipass - SSH Configuration](https://github.com/omerbsezer/Fast-Ansible/blob/main/Multipass-SSH-Configuration.md)
+- [LAB: Multipass-SSH Configuration (Create Ansible Test Environment)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Multipass-SSH-Configuration.md)
 - [Ansible Commands Cheatsheet]()
 
 # Table of Contents
