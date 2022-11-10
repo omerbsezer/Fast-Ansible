@@ -82,3 +82,6 @@ ssh <username>@<IP>
 ```
 
 ![image](https://user-images.githubusercontent.com/10358317/201084577-1028dc59-be04-4cb4-982b-f3dca1ea6251.png)
+
+### References
+- https://techsparx.com/linux/multipass/enable-ssh.html
