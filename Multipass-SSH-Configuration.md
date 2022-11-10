@@ -1,4 +1,4 @@
-## LAB: Multipass-SSH-Configuration (Create Ansible Environment)
+## LAB: Multipass-SSH-Configuration (Create Ansible Test Environment)
 
 This scenario shows:
 - how to install multipass
