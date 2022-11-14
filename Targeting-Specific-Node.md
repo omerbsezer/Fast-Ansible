@@ -21,6 +21,9 @@ This scenario shows:
 172.21.76.101
 ``` 
 
+![image](https://user-images.githubusercontent.com/10358317/201671961-6eb2815e-67e1-43d5-9e36-49bcebe0dad4.png)
+
+
 - Create 'site.yml' file
 - To prioritize the tasks, for updating, 'pre_tasks' is used
 - For different hosts, 3 different host groups are created: all, web_servers and database_servers
