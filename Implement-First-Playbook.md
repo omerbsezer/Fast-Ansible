@@ -192,6 +192,58 @@ ansible all -m gather_facts --limit 172.21.79.85 | grep ansible_distribution
 
 - It is possible to use 'when' commands with other details (e.g. "ansible_distribution_version": "22.04")
 
+- Adding new tasks for 'CentOS' distribution
+
+```
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository index
+    apt:
+      update_cache: yes
+    when: ansible_distribution in ["Debian", "Ubuntu"]
+
+  - name: install apache2 package
+    apt:
+      name: apache2
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: add php support for apache
+    apt:
+      name: libapache2-mod-php
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: update repository index
+    dnf:
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
+  - name: install apache2 package
+    dnf:
+      name: httpd
+      state: latest
+    when: ansible_distribution == "CentOS"
+
+  - name: add php support for apache
+    dnf:
+      name: php
+      state: latest
+    when: ansible_distribution == "CentOS"
+```
+Run: 
+``` 
+ansible-playbook --ask-become-pass install_apache.yml
+``` 
+- Tasks that are defined for 'CentOS' are skipped
+
+![image](https://user-images.githubusercontent.com/10358317/201657035-511cf7aa-8b17-4f87-95f9-4ea8d2772b1d.png)
+
+
 ### Reference
 
 - https://www.youtube.com/watch?v=VANub3AhZpI&list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70&index=6
