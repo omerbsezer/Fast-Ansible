@@ -10,7 +10,8 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbook, and 
 - [LAB: Refactoring / Improving Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Refactoring-Playbook.md)
 - [LAB: Targeting Specific Nodes (Grouping)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Targeting-Specific-Node.md)
 - [LAB: Adding Tags](https://github.com/omerbsezer/Fast-Ansible/blob/main/Tags.md)
-- [LAB: Managing Files]()
+- [LAB: Managing Files](https://github.com/omerbsezer/Fast-Ansible/blob/main/Managing-Files.md)
+- [LAB: Managing Services]()
 - [Ansible Commands Cheatsheet]()
 
 # Table of Contents
