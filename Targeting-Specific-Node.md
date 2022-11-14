@@ -80,4 +80,20 @@ This scenario shows:
     when: ansible_distribution == "Ubuntu"
 ```    
 
+- Run 
+
+```
+ansible-playbook --ask-become-pass site.yml
+```
+
 ![image](https://user-images.githubusercontent.com/10358317/201669957-5141bd02-b42a-4ceb-8750-d2aee3fb9716.png)
+
+- When we control whether mariadb is installed or not on database_servers (node2), it can be seen that it was installed on node2.
+
+```
+multipass shell node2
+systemctl status mariadb
+```
+
+![image](https://user-images.githubusercontent.com/10358317/201671418-42d8734a-d55f-4247-8451-db45e7a889a4.png)
+
