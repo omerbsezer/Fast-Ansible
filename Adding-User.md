@@ -200,3 +200,20 @@ sudo ls -l /etc/sudoers.d
 ![image](https://user-images.githubusercontent.com/10358317/201952021-c57d91fd-dddc-4c14-bf7b-2e8557bd9125.png)
 
 
+- Update the 'ansible.cfg' file
+
+```
+[defaults]
+inventory = inventory
+# private_key_file = ~/.ssh/ansible
+remote_user = newuser111
+```
+- When we run ansible-playbook without become password (sudo), it works:
+
+```
+ansible-playbook site.yml
+```
+
+![image](https://user-images.githubusercontent.com/10358317/201961697-79fee25d-f1f0-4894-81ce-8dfe30c6ff67.png)
+
+- Finally we created new user, added this user as sudoers and we can now use ansible-playbook without using become password
