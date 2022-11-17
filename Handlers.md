@@ -101,3 +101,8 @@ ansible-playbook site.yml
 
 ![image](https://user-images.githubusercontent.com/10358317/202517584-71df6b36-314b-4ceb-af23-6d73cded4e5b.png)
 
+- File/Directory structure:
+
+![image](https://user-images.githubusercontent.com/10358317/202518840-c9aa8a6c-a134-444d-9e00-53d60b1ad7dc.png)
+
+
