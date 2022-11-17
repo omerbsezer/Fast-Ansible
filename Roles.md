@@ -48,7 +48,10 @@ This scenario shows:
   roles:
     - database_servers
 ```
-- Create directories
+
+![image](https://user-images.githubusercontent.com/10358317/202458768-ffbc6907-4659-4a43-8629-454f0b4a9a7f.png)
+
+- Create directories.
 
 ```
 mkdir role
