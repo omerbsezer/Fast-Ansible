@@ -13,7 +13,7 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbook, and 
 - [LAB: Managing Files](https://github.com/omerbsezer/Fast-Ansible/blob/main/Managing-Files.md)
 - [LAB: Managing Services](https://github.com/omerbsezer/Fast-Ansible/blob/main/Managing-Services.md)
 - [LAB: Adding Users](https://github.com/omerbsezer/Fast-Ansible/blob/main/Adding-User.md)
-- [LAB: Roles]()
+- [LAB: Roles](https://github.com/omerbsezer/Fast-Ansible/blob/main/Roles.md)
 - [LAB: Host Variables and Handlers]()
 - [Ansible Commands Cheatsheet]()
 
