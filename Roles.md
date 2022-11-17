@@ -178,6 +178,7 @@ cp ../../files/default_site.html files/default_site.html
 
 ![image](https://user-images.githubusercontent.com/10358317/202455685-4becaa8e-6164-42bb-80f7-18471b21478d.png)
 
+- Printscreen shows the structure of the directories. Structure should be like that, because Ansible finds the tasks with that way (e.g. roles/[nameofrole]/tasks/main.yml)
 
 ![image](https://user-images.githubusercontent.com/10358317/202458020-39562296-fb49-4fec-94cc-e071e29a2c9a.png)
 
