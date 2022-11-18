@@ -22,6 +22,7 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbook, and 
 # Table of Contents
 - [Motivation](#motivation)
 - [What is Ansible?](#whatIsAnsible)
+- [How Ansible Works?](#howAnsibleWorks)
 - [Creating LAB Environment](#labEnvironment)
 - [Ansible Basic (Ad-Hoc) Commands](#commands)    
 - [Ansible Modules](#modules)
@@ -52,7 +53,7 @@ Why should we use / learn Ansible?
 - It runs tasks both on Linux and Windows PCs.
 - It has well-designed documentation (https://docs.ansible.com)
 - Ansible uses SSH to communicate with other nodes.
-- Ansible handles many tasks using its modules and easy to integrate for other tools/apps.
+- Ansible handles many tasks using its modules and easy to integrate for other tools/apps (e.g. [Terraform](https://www.terraform.io/)).
 
 ![image](https://user-images.githubusercontent.com/10358317/202701707-b160e35c-7a05-43e8-93c7-b626c8054aa9.png) (ref: medium)
 
@@ -71,6 +72,10 @@ Why should we use / learn Ansible?
 - "Ansible is a software tool that provides simple but powerful automation for cross-platform computer support." (ref: Opensource.com)
 - "In Ansible, there are two categories of computers: the control node and managed nodes. The control node is a computer that runs Ansible. There must be at least one control node, although a backup control node may also exist. A managed node is any device being managed by the control node." (ref: Opensource.com)
 - "Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending a small program called an Ansible module to that node. Ansible executes these modules over SSH and removes them when finished. The only requirement for this interaction is that your Ansible control node has login access to the managed nodes. SSH keys are the most common way to provide access, but other forms of authentication are also supported." (ref: Opensource.com)
+
+## How Ansible Works? <a name="howAnsibleWorks"></a>
+
+![image](https://user-images.githubusercontent.com/10358317/202703050-da88ea06-3416-4559-82f3-7ae8c709ce72.png) (ref: medium)
 
 ## Creating LAB Environment <a name="labEnvironment"></a>
 
@@ -133,4 +138,4 @@ https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
 - Video Tutorial: https://www.youtube.com/watch?v=3RiVKs8GHYQ&list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70
 - https://www.kreyman.de/index.php/others/linux-kubernetes/213-ansible-verwendungsszenarien
 - https://ibm.github.io/cloud-enterprise-examples/iac-conf-mgmt/ansible/
-- https://medium.com/codex/automation-with-ansible-b39706ff777
+- Medium: https://medium.com/codex/automation-with-ansible-b39706ff777
