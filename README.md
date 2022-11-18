@@ -39,7 +39,33 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbook, and 
 - [References](#references)
 
 ## Motivation <a name="motivation"></a>
-Why should we use Ansible? 
+
+Why should we use / learn Ansible? 
+
+- It automates tasks and commands to manage multiple nodes (servers, PCs).
+- Ansible is a state-of-the-art automation tool. Many companies use it.
+- Ansible can be used both on-premises and cloud environment.
+- Commands, tasks, codes turn into the Infrastructure As Code (IaC).
+  - With IaC, tasks is savable, versionable, repetable and testable.
+  - With IaC, desired configuration is defined as 'Declerative Way'.
+- **Agentless:** On the worker node, any agent app is not required to run.
+- It runs tasks both on Linux and Windows PCs.
+- It has well-designed documentation (https://docs.ansible.com)
+- Ansible uses SSH to communicate with other nodes.
+- Ansible handles many tasks using its modules and easy to integrate for other tools/apps.
+
+![image](https://user-images.githubusercontent.com/10358317/202701707-b160e35c-7a05-43e8-93c7-b626c8054aa9.png) (ref: medium)
+
+- Ansible also is used by other important applications (e.g. Open Source Gating CI Tools: [Zuul-CI](https://zuul-ci.org/))
+
+
+![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
+
+- Ansible is used for configuration management on the nodes, Terraform is provisioning tool that uses to create/provision Cloud Infrastructure objects/items (e.g. Virtual Private Cloud, Virtual Machines, Subnets, etc.)
+
+
+![image](https://user-images.githubusercontent.com/10358317/202700302-d651cf08-dd55-44ea-a88c-8ee4186d9438.png) (ref: ibm.github.io)
+
 
 ## What is Ansible? <a name="whatIsAnsible"></a>
 - "Ansible is a software tool that provides simple but powerful automation for cross-platform computer support." (ref: Opensource.com)
@@ -56,6 +82,7 @@ Why should we use Ansible?
 
 ## Ansible Modules <a name="modules"></a>
 
+https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
 
 ## Ansible Playbooks <a name="playbooks"></a>
 
@@ -104,3 +131,6 @@ Why should we use Ansible?
 ## Reference <a name="references"></a>
 - OpenSource: https://opensource.com/resources/what-ansible
 - Video Tutorial: https://www.youtube.com/watch?v=3RiVKs8GHYQ&list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70
+- https://www.kreyman.de/index.php/others/linux-kubernetes/213-ansible-verwendungsszenarien
+- https://ibm.github.io/cloud-enterprise-examples/iac-conf-mgmt/ansible/
+- https://medium.com/codex/automation-with-ansible-b39706ff777
