@@ -50,22 +50,28 @@ Why should we use / learn Ansible?
   - With IaC, tasks is savable, versionable, repetable and testable.
   - With IaC, desired configuration is defined as 'Declerative Way'.
 - **Agentless:** On the worker node, any agent app is not required to run.
+- **Parallel Run:** Ansible runs the same task in multiple hosts by default in parallel.
 - It runs tasks both on Linux and Windows PCs.
 - It has well-designed documentation (https://docs.ansible.com)
 - Ansible uses SSH to communicate with other nodes.
-- Ansible handles many tasks using its modules and easy to integrate for other tools/apps (e.g. [Terraform](https://www.terraform.io/)).
+- Ansible handles many tasks using its modules.
 
 ![image](https://user-images.githubusercontent.com/10358317/202701707-b160e35c-7a05-43e8-93c7-b626c8054aa9.png) (ref: medium)
 
 - Ansible also is used by other important applications (e.g. Open Source Gating CI Tools: [Zuul-CI](https://zuul-ci.org/))
 
 
-![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
 
 - Ansible is used for configuration management on the nodes, Terraform is provisioning tool that uses to create/provision Cloud Infrastructure objects/items (e.g. Virtual Private Cloud, Virtual Machines, Subnets, etc.)
 
 
 ![image](https://user-images.githubusercontent.com/10358317/202700302-d651cf08-dd55-44ea-a88c-8ee4186d9438.png) (ref: ibm.github.io)
+
+- Ansible can be easily integrated with different technologies (e.g. [Terraform](https://www.terraform.io/)).
+
+<img src="https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png" width="573" height="293" />
+
+
 
 
 ## What is Ansible? <a name="whatIsAnsible"></a>
@@ -73,9 +79,12 @@ Why should we use / learn Ansible?
 - "In Ansible, there are two categories of computers: the control node and managed nodes. The control node is a computer that runs Ansible. There must be at least one control node, although a backup control node may also exist. A managed node is any device being managed by the control node." (ref: Opensource.com)
 - "Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending a small program called an Ansible module to that node. Ansible executes these modules over SSH and removes them when finished. The only requirement for this interaction is that your Ansible control node has login access to the managed nodes. SSH keys are the most common way to provide access, but other forms of authentication are also supported." (ref: Opensource.com)
 
+![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
+
 ## How Ansible Works? <a name="howAnsibleWorks"></a>
 
-![image](https://user-images.githubusercontent.com/10358317/202703050-da88ea06-3416-4559-82f3-7ae8c709ce72.png) (ref: medium)
+<img src="https://user-images.githubusercontent.com/10358317/202703050-da88ea06-3416-4559-82f3-7ae8c709ce72.png" width="540" height="285" />
+
 
 ## Creating LAB Environment <a name="labEnvironment"></a>
 
