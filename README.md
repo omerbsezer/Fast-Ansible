@@ -43,9 +43,10 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbook, and 
 
 Why should we use / learn Ansible? 
 
-- It automates tasks and commands to manage multiple nodes (servers, PCs).
+- Ansible automates tasks and commands to manage multiple nodes (servers, PCs).
 - Ansible is a state-of-the-art automation tool. Many companies use it.
 - Ansible can be used both on-premises and cloud environment.
+- It is free, open source (https://github.com/ansible/ansible) and has huge community.
 - Commands, tasks, codes turn into the Infrastructure As Code (IaC).
   - With IaC, tasks is savable, versionable, repetable and testable.
   - With IaC, desired configuration is defined as 'Declerative Way'.
