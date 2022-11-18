@@ -95,7 +95,9 @@ Why should we use / learn Ansible?
 
 ## Ansible Modules <a name="modules"></a>
 
-https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
+- Modules: Small programs that do actual job.
+- Control node sends these modules to the nodes.
+- Module Documentation: https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
 
 ## Ansible Playbooks <a name="playbooks"></a>
 
