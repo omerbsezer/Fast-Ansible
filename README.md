@@ -69,9 +69,7 @@ Why should we use / learn Ansible?
 
 - Ansible can be easily integrated with different technologies (e.g. [Terraform](https://www.terraform.io/)).
 
-<img src="https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png" width="573" height="293" />
-
-
+<img src="https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png" width="573" height="293" /> (ref: RedHat Presentation)
 
 
 ## What is Ansible? <a name="whatIsAnsible"></a>
@@ -148,3 +146,4 @@ https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
 - https://www.kreyman.de/index.php/others/linux-kubernetes/213-ansible-verwendungsszenarien
 - https://ibm.github.io/cloud-enterprise-examples/iac-conf-mgmt/ansible/
 - Medium: https://medium.com/codex/automation-with-ansible-b39706ff777
+- RedHat Presentation: https://speakerdeck.com/chrisshort/using-ansible-for-devops?slide=27
