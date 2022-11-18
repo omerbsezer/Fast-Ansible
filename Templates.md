@@ -95,7 +95,8 @@ ansible-playbook site.yml
 ```
 ![image](https://user-images.githubusercontent.com/10358317/202692817-02c63dd3-86e4-47da-bec9-864cbc3a3510.png)
 
-- After running playbook, when we go to the 'node1' to see the content of sshd_config ('nano /etc/ssh/sshd_config')
+- After running playbook, when we go to the 'node1' to see the content of sshd_config ('nano /etc/ssh/sshd_config').
+- 'AllowUsers newuser2022' is added.
 
 ![image](https://user-images.githubusercontent.com/10358317/202694177-b202a08c-ff59-4739-b0e9-922c7e5d8d41.png)
 
