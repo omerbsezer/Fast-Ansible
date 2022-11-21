@@ -68,7 +68,7 @@ Why should we use / learn Ansible?
 
 - Ansible can be easily integrated with different technologies (e.g. [Terraform](https://www.terraform.io/)).
 
-![image](https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png =573x293) (ref: RedHat Presentation)
+![image](https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png){ width=75% } (ref: RedHat Presentation)
 
 ## What is Ansible? <a name="whatIsAnsible"></a>
 - "Ansible is a software tool that provides simple but powerful automation for cross-platform computer support." (ref: Opensource.com)
