@@ -68,18 +68,16 @@ Why should we use / learn Ansible?
 
 - Ansible can be easily integrated with different technologies (e.g. [Terraform](https://www.terraform.io/)).
 
-![image](https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png){width=75%} (ref: RedHat Presentation)
-
 ## What is Ansible? <a name="whatIsAnsible"></a>
 - "Ansible is a software tool that provides simple but powerful automation for cross-platform computer support." (ref: Opensource.com)
 - "In Ansible, there are two categories of computers: the control node and managed nodes. The control node is a computer that runs Ansible. There must be at least one control node, although a backup control node may also exist. A managed node is any device being managed by the control node." (ref: Opensource.com)
 - "Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending a small program called an Ansible module to that node. Ansible executes these modules over SSH and removes them when finished. The only requirement for this interaction is that your Ansible control node has login access to the managed nodes. SSH keys are the most common way to provide access, but other forms of authentication are also supported." (ref: Opensource.com)
 
-![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
+
 
 ## How Ansible Works? <a name="howAnsibleWorks"></a>
 
-![image](https://user-images.githubusercontent.com/10358317/202703050-da88ea06-3416-4559-82f3-7ae8c709ce72.png =540x285) (ref: Medium)
+![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
 
 ## Creating LAB Environment <a name="labEnvironment"></a>
 
