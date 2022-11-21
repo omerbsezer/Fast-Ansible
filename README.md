@@ -61,8 +61,6 @@ Why should we use / learn Ansible?
 
 - Ansible also is used by other important applications (e.g. Open Source Gating CI Tools: [Zuul-CI](https://zuul-ci.org/))
 
-
-
 - Ansible is used for configuration management on the nodes, Terraform is provisioning tool that uses to create/provision Cloud Infrastructure objects/items (e.g. Virtual Private Cloud, Virtual Machines, Subnets, etc.)
 
 
@@ -70,7 +68,7 @@ Why should we use / learn Ansible?
 
 - Ansible can be easily integrated with different technologies (e.g. [Terraform](https://www.terraform.io/)).
 
-![image](https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png) (ref: RedHat Presentation)
+![image](https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png =573x293) (ref: RedHat Presentation)
 
 ## What is Ansible? <a name="whatIsAnsible"></a>
 - "Ansible is a software tool that provides simple but powerful automation for cross-platform computer support." (ref: Opensource.com)
@@ -81,7 +79,7 @@ Why should we use / learn Ansible?
 
 ## How Ansible Works? <a name="howAnsibleWorks"></a>
 
-![image](https://user-images.githubusercontent.com/10358317/202703050-da88ea06-3416-4559-82f3-7ae8c709ce72.png) (ref: Medium)
+![image](https://user-images.githubusercontent.com/10358317/202703050-da88ea06-3416-4559-82f3-7ae8c709ce72.png =540x285) (ref: Medium)
 
 ## Creating LAB Environment <a name="labEnvironment"></a>
 
