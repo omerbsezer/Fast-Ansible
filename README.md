@@ -70,8 +70,7 @@ Why should we use / learn Ansible?
 
 - Ansible can be easily integrated with different technologies (e.g. [Terraform](https://www.terraform.io/)).
 
-<img src="https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png" width="573" height="293" /> (ref: RedHat Presentation)
-
+![image](https://user-images.githubusercontent.com/10358317/202704909-614a69fc-12a9-4866-bdec-e3ee4cb8bd8d.png) (ref: RedHat Presentation)
 
 ## What is Ansible? <a name="whatIsAnsible"></a>
 - "Ansible is a software tool that provides simple but powerful automation for cross-platform computer support." (ref: Opensource.com)
@@ -82,8 +81,7 @@ Why should we use / learn Ansible?
 
 ## How Ansible Works? <a name="howAnsibleWorks"></a>
 
-<img src="https://user-images.githubusercontent.com/10358317/202703050-da88ea06-3416-4559-82f3-7ae8c709ce72.png" width="540" height="285" />
-
+![image](https://user-images.githubusercontent.com/10358317/202703050-da88ea06-3416-4559-82f3-7ae8c709ce72.png) (ref: Medium)
 
 ## Creating LAB Environment <a name="labEnvironment"></a>
 
