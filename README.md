@@ -100,14 +100,29 @@ Why should we use / learn Ansible?
 ``` 
 # collect information from specific IP
 ansible all -m gather_facts --limit 172.26.215.23
-# update all nodes (apt update)
-ansible all -m apt -a update_cache=true
-# with 
+# update all nodes (sudo apt-get update), 'become' for sudo (give all nodes same password with 'passwd')
 ansible all -m apt -a update_cache=true --become --ask-become-pass
+# install snapd for all ubuntu nodes (sudo apt-get install snapd)
 ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
-ansible multi -m shell -a "cat /proc/meminfo|head -2" 
-# creating a user name group named weblogic using the ansible group module
-ansible app -s -m group -a "name=weblogic state=present"
+# upgrade all nodes (sudo apt-get upgrade)
+ansible all -m apt -a upgrade=dist --become --ask-become-pass
+# run shell commands
+ansible all -m shell -a "cat /proc/meminfo|head -2" 
+ansible web_servers -m shell -a "cat /proc/meminfo|head -2" 
+# to learn disk space
+ansible all -m command -a "df -h"
+ansible all  -a "df -h"
+# check the status of the httpd service
+ansible all -m service -a "name=httpd"
+``` 
+
+- If you define your inventory file (nano inventory) and group the servers with keywords, you can use 'web_servers' and 'database_servers' in the commands (above).
+``` 
+[web_servers]
+172.21.67.249
+
+[database_servers]
+172.21.75.98
 ``` 
 
 - [LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
