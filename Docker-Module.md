@@ -26,12 +26,14 @@ This scenario shows:
 
   tasks:
     - name: Install aptitude
+      tags: install
       apt:
         name: aptitude
         state: latest
         update_cache: true
 
     - name: Install required system packages
+      tags: install
       apt:
         pkg:
           - apt-transport-https
@@ -45,40 +47,84 @@ This scenario shows:
         update_cache: true
 
     - name: Add Docker GPG apt Key
+      tags: install
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
 
     - name: Add Docker Repository
+      tags: install
       apt_repository:
         repo: deb https://download.docker.com/linux/ubuntu focal stable
         state: present
-
+        
     - name: Update apt and install docker-ce
+      tags: install
       apt:
         name: docker-ce
         state: latest
         update_cache: true
 
     - name: Install Docker Module for Python
+      tags: install
       pip:
         name: docker
 
     - name: Pull default Docker image
-      community.docker.docker_image:
+      tags: pull
+      docker_image:
         name: "{{ default_container_image }}"
         source: pull
 
-    - name: Create default containers
-      community.docker.docker_container:
+    - name: Run default containers
+      tags: run
+      docker_container:
         name: "{{ default_container_name }}{{ item }}"
         image: "{{ default_container_image }}"
         command: "{{ default_container_command }}"
         state: present
       with_sequence: count={{ container_count }}
+
+    - name: docker container ls -a
+      tags: container_ls
+      become: True
+      shell:
+        "docker container ls -a"
+      register: container_info
+
+    - name: docker container ls -a result
+      tags: container_ls
+      debug:
+        msg: "{{container_info.stdout_lines}}"
+
+    - name: docker images
+      tags: image_ls
+      become: True
+      shell:
+        "docker images"
+      register: image_info
+      
+    - name: docker images result
+      tags: image_ls
+      debug:
+        msg: "{{image_info.stdout_lines}}"
+
+    - name: Stop containers
+      tags: stop
+      docker_container:
+        name: "{{ default_container_name }}{{ item }}"
+        state: stopped
+      with_sequence: count={{ container_count }}
+
+    - name: Remove containers
+      tags: remove
+      docker_container:
+        name: "{{ default_container_name }}{{ item }}"
+        state: absent
+      with_sequence: count={{ container_count }}  
 ``` 
 
-- Run following command to run:
+- Run following command to run all, but we should use tags to run specific commands:
 
 ```
 ansible-playbook docker_play.yml
@@ -93,6 +139,39 @@ sudo docker container ls -a
 ```
 
 ![image](https://user-images.githubusercontent.com/10358317/203570423-d9721ceb-6869-439c-842d-66112fc931ec.png)
+
+- To install docker on nodes:
+```
+ansible-playbook docker_play.yml --tags install
+```
+
+- To run (sudo docker container ls -a):
+```
+ansible-playbook docker_play.yml --tags container_ls
+```
+
+![image](https://user-images.githubusercontent.com/10358317/203594440-46b99a95-f4b5-4f8b-9d10-93d5cd8eddd5.png)
+
+- To run (sudo docker images):
+```
+ansible-playbook docker_play.yml --tags image_ls
+```
+
+![image](https://user-images.githubusercontent.com/10358317/203594583-4edac3c5-50b3-4ee3-8172-2e6413adf094.png)
+
+- To stop docker containers (in this case, containers are not up, their status is 'created'):
+
+```
+ansible-playbook docker_play.yml --tags stop
+```
+
+- To remove docker containers: 
+
+```
+ansible-playbook docker_play.yml --tags remove
+```
+
+![image](https://user-images.githubusercontent.com/10358317/203595029-7e9c6d1a-2b5f-4881-9d9e-9c60b68cb0e0.png)
 
 
 ### Sample Docker Tasks:
