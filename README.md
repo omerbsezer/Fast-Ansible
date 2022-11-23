@@ -106,6 +106,8 @@ Why should we use / learn Ansible?
 ``` 
 # collect information from specific IP
 ansible all -m gather_facts --limit 172.26.215.23
+# collect information from all hosts
+ansible all -m gather_facts
 # update all nodes (sudo apt-get update), 'become' for sudo (give all nodes same password with 'passwd')
 ansible all -m apt -a update_cache=true --become --ask-become-pass
 # install snapd for all ubuntu nodes (sudo apt-get install snapd)
@@ -124,6 +126,8 @@ ansible all -m service -a "name=httpd"
 ansible all -m shell -a uptime
 # create testfile under '/tmp' with mode=0755
 ansible all -m file -a "path=/tmp/testfile state=touch mode=0755"
+# list all hosts
+ansible all --list-hosts
 ``` 
 
 - If you define your inventory file (nano inventory) and group the servers with keywords, you can use 'web_servers' and 'database_servers' in the commands (above).
