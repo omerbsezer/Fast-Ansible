@@ -77,10 +77,15 @@ Why should we use / learn Ansible?
 - In Ansible, there are two categories of computers: the control node and managed nodes. The control node is a computer that runs Ansible. There must be at least one control node, although a backup control node may also exist. A managed node is any device being managed by the control node. 
 - Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending a small program called an Ansible module to that node. Ansible executes these modules over SSH and removes them when finished.(ref: Opensource.com)
 - The only requirement for this interaction is that your Ansible control node has login access to the managed nodes. SSH keys are the most common way to provide access, but other forms of authentication are also supported. (ref: Opensource.com)
-- There are files that are for configuruation and usage of Ansible:
-  - **Inventory File**: It contains and groups worker nodes' IP and domain names. Ansible knows and sends commands using these file. 
+- There are files that are for configuration and usage of Ansible:
+  - **Inventory File**: It contains and groups worker nodes' IP and domain names. Ansible knows and sends commands using these file, typically located at /etc/ansible/hosts.
   - **Configuration (.cfg) File**: It contains configuration (e.g. inventory file, key_file, remote_user, etc.)
-  - **Playbook**: Playbooks are one of the core features of Ansible and tell Ansible what to execute. Playbooks are written in YAML format.  
+  - **Playbook**: Playbooks are one of the core features of Ansible and tell Ansible what to execute. It is a file containing a series of tasks to be executed on a remote server. Playbooks are written in YAML format. 
+- Other Important Parts:  
+  - **Control Machine / Node**: a system where Ansible is installed and configured to connect and execute commands on nodes.
+  - **Node (Worker node)**: a server controlled by Ansible.
+  - **Role**: a collection of playbooks and other files that are relevant to a goal such as installing a web server.
+  - **Play**: a full Ansible run. A play can have several playbooks and roles, included from a single playbook that acts as entry point.
 
 ![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
 
@@ -293,6 +298,7 @@ ansible-playbook --tags ubuntu --ask-become-pass site.yml
 - https://docs.ansible.com/ansible/2.9/
 - Video Tutorial: https://www.youtube.com/watch?v=3RiVKs8GHYQ&list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70
 - https://www.tutorialspoint.com/ansible/
+- https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide
 - https://www.middlewareinventory.com/blog/category/ansible/
 
 ## Reference <a name="references"></a>
@@ -303,3 +309,4 @@ ansible-playbook --tags ubuntu --ask-become-pass site.yml
 - Medium: https://medium.com/codex/automation-with-ansible-b39706ff777
 - RedHat Presentation: https://speakerdeck.com/chrisshort/using-ansible-for-devops?slide=27
 - https://www.middlewareinventory.com/blog/ansible-playbook-example/
+- https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide
