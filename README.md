@@ -98,10 +98,16 @@ Why should we use / learn Ansible?
 
 - Sample Commands:
 ``` 
+# collect information from specific IP
 ansible all -m gather_facts --limit 172.26.215.23
+# update all nodes (apt update)
 ansible all -m apt -a update_cache=true
+# with 
 ansible all -m apt -a update_cache=true --become --ask-become-pass
 ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
+ansible multi -m shell -a "cat /proc/meminfo|head -2" 
+# creating a user name group named weblogic using the ansible group module
+ansible app -s -m group -a "name=weblogic state=present"
 ``` 
 
 - [LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
@@ -139,9 +145,29 @@ ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
 - Instead of using Adhoc Commands, playbooks are used to store, manage easily (declerative way)
   ![image](https://user-images.githubusercontent.com/10358317/203531052-f9fc2527-06cc-4503-b042-bca5997b5bd0.png) 
 
+- Playbooks are YAML files that include name, hosts (group name that is defined in inventoryfile), vars (variables that are used in playbooks) and tasks:
+
+```
+--- 
+   name: install and configure DB
+   hosts: testServer
+   become: yes
+
+   vars: 
+     oracle_db_port_value : 1521
+   
+   tasks:
+   -name: Install the Oracle DB
+      yum: <code to install the DB>
+    
+   -name: Ensure the installed service is enabled and running
+    service:
+      name: <your service name>
+```  
+
 - Playbooks include hostname, user information, and tasks (with modules):
 ![image](https://user-images.githubusercontent.com/10358317/203531873-cf746f02-67cd-4d2d-98f8-fd7b4900b614.png) 
-
+    
 - Go to LAB to learn how playbook is created:
   - [LAB: Implement First Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Implement-First-Playbook.md)
 
