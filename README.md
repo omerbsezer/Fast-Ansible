@@ -7,6 +7,7 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbook, and 
 - [LAB: Multipass-SSH Configuration (Create Ansible Test Environment)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Multipass-SSH-Configuration.md)
 - [LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
 - [LAB: Implement First Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Implement-First-Playbook.md)
+- [LAB: Playing Docker Module](https://github.com/omerbsezer/Fast-Ansible/blob/main/Docker-Module.md)
 - [LAB: Refactoring / Improving Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Refactoring-Playbook.md)
 - [LAB: Targeting Specific Nodes (Grouping)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Targeting-Specific-Node.md)
 - [LAB: Adding Tags](https://github.com/omerbsezer/Fast-Ansible/blob/main/Tags.md)
@@ -128,8 +129,8 @@ ansible all -m file -a "path=/tmp/testfile state=touch mode=0755"
 [database_servers]
 172.21.75.98
 ``` 
-
-- [LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
+- Go to LAB to learn:
+  - [LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
 
 ## Ansible Modules <a name="modules"></a>
 
@@ -141,7 +142,11 @@ ansible all -m file -a "path=/tmp/testfile state=touch mode=0755"
     - Download Docker Image, Start/Stop Docker containers,
     - Start/Stop Nginx Server, Create Cloud instance, etc.     
 - Control node sends these modules to the nodes.
-- Modules: 
+
+- Go to LAB to learn:
+  - [LAB: Playing Docker Module](https://github.com/omerbsezer/Fast-Ansible/blob/main/Docker-Module.md)
+  
+- All Modules in Ansible: 
   - [Cloud Modules (AWS, Azure, Digital Ocean, Docker, Google Cloud, OpenStack, Vmware)](https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html)
   - [Clustering Modules (Kubernetes, ETCD)](https://docs.ansible.com/ansible/2.9/modules/list_of_clustering_modules.html)
   - [Command Modules (Command, Expect, Shell, Script)](https://docs.ansible.com/ansible/2.9/modules/list_of_commands_modules.html)
