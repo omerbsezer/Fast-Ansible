@@ -12,6 +12,8 @@ This scenario shows:
 - "Multipass is a mini-cloud on your workstation using native hypervisors of all the supported plaforms (Windows, macOS and Linux)"
 - Fast to install and to use.
 - **Link:** https://multipass.run/
+- Install on Linux, Windows and MacOs: https://multipass.run/install
+- After installing, we can create VMs on our local machine.
 
 ``` 
 # creating controlnode, managed nodes (node1, node2, etc.)
