@@ -70,17 +70,20 @@ Why should we use / learn Ansible?
 
 ## What is Ansible? <a name="whatIsAnsible"></a>
 - "Ansible is a software tool that provides simple but powerful automation for cross-platform computer support." (ref: Opensource.com)
-- "In Ansible, there are two categories of computers: the control node and managed nodes. The control node is a computer that runs Ansible. There must be at least one control node, although a backup control node may also exist. A managed node is any device being managed by the control node." (ref: Opensource.com)
-- "Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending a small program called an Ansible module to that node. Ansible executes these modules over SSH and removes them when finished. The only requirement for this interaction is that your Ansible control node has login access to the managed nodes. SSH keys are the most common way to provide access, but other forms of authentication are also supported." (ref: Opensource.com)
-
-
 
 ## How Ansible Works? <a name="howAnsibleWorks"></a>
+
+- In Ansible, there are two categories of computers: the control node and managed nodes. The control node is a computer that runs Ansible. There must be at least one control node, although a backup control node may also exist. A managed node is any device being managed by the control node. 
+- Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending a small program called an Ansible module to that node. Ansible executes these modules over SSH and removes them when finished.(ref: Opensource.com)
+- The only requirement for this interaction is that your Ansible control node has login access to the managed nodes. SSH keys are the most common way to provide access, but other forms of authentication are also supported. (ref: Opensource.com)
 
 ![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
 
 ## Creating LAB Environment <a name="labEnvironment"></a>
 
+- For testing Ansible, it is required to get multiple PC or virtual machine. 
+- So we are using Multipass that is lightweight, fast, easy to use Ubuntu VM (on demand for any workstation).
+- Install on Linux, Windows and MacOs: https://multipass.run/install
 - [LAB: Multipass-SSH Configuration (Create Ansible Test Environment)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Multipass-SSH-Configuration.md)
 
 ## Ansible Basic (Ad-Hoc) Commands <a name="commands"></a>
