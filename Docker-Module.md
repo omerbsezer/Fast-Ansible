@@ -1,8 +1,9 @@
-## LAB: Playing Docker 
+## LAB: Playing Docker Module
 
 This scenario shows:
 - how to install docker
-- how to pull docker container 
+- how to pull and list docker images
+- how to run, stop, remove docker containers.
 
 ### Prerequisite
 
