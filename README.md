@@ -92,7 +92,7 @@ Why should we use / learn Ansible?
 
 ## Creating LAB Environment <a name="labEnvironment"></a>
 
-- For testing Ansible, it is required to get multiple PC or virtual machine. 
+- For testing Ansible, Ansible modules, it is required to get multiple PC or virtual machine. 
 - So we are using Multipass that is lightweight, fast, easy to use Ubuntu VM (on demand for any workstation).
 - Install on Linux, Windows and MacOs: https://multipass.run/install
 - [LAB: Multipass-SSH Configuration (Create Ansible Test Environment)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Multipass-SSH-Configuration.md)
