@@ -98,7 +98,7 @@ Why should we use / learn Ansible?
 
 ## Ansible Basic (Ad-Hoc) Commands <a name="commands"></a>
 
-- We can send commands all worker nodes.  
+- Commands can be sent to the all worker nodes from control node.  
 - Code structure: 
   ![image](https://user-images.githubusercontent.com/10358317/203532819-acf44653-de14-426b-9656-35fa82bd4721.png) 
 
