@@ -292,8 +292,24 @@ ansible-playbook --tags ubuntu --ask-become-pass site.yml
   - [LAB: Handlers](https://github.com/omerbsezer/Fast-Ansible/blob/main/Handlers.md)
 
 ## Templates <a name="templates"></a>
+- Ansible template module does two things: 
+  - Replace the Jinja2 interpolation syntax variables present ({{ }}) in the template file with actual values.
+  - Copy (scp) the file to the remote server.
 
-- [LAB: Templates](https://github.com/omerbsezer/Fast-Ansible/blob/main/Templates.md)
+- Jinja2 interpolation syntax variables in the playbook:
+  
+  ![image](https://user-images.githubusercontent.com/10358317/203617129-308c53fb-7720-4d12-a55e-b4aa71dc9957.png)
+  
+- In Ansible {{ }} is the interpolation syntax whereas in shell script it is ${ }
+
+- You can start your playbook like this with the variables at runtime.
+
+```
+ansible-playbook findtest.yaml -e "DIR=/apps/Tomcat FILEEXT=*.log DAYSOLD=30"
+```
+
+- Go to LAB to learn how:
+  - [LAB: Templates](https://github.com/omerbsezer/Fast-Ansible/blob/main/Templates.md)
 
 ## Debugging <a name="debugging"></a>
 
