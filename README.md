@@ -114,6 +114,10 @@ ansible all -m command -a "df -h"
 ansible all  -a "df -h"
 # check the status of the httpd service
 ansible all -m service -a "name=httpd"
+# get the uptime with shell module
+ansible all -m shell -a uptime
+# create testfile under '/tmp' with mode=0755
+ansible all -m file -a "path=/tmp/testfile state=touch mode=0755"
 ``` 
 
 - If you define your inventory file (nano inventory) and group the servers with keywords, you can use 'web_servers' and 'database_servers' in the commands (above).
@@ -190,36 +194,89 @@ ansible all -m service -a "name=httpd"
 
 ## Inventory File - Targeting Specific Nodes <a name="inventory"></a>
 
-- [LAB: Targeting Specific Nodes (Grouping)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Targeting-Specific-Node.md)
+- For grouping the nodes (defining with names), we are using inventory file (nano inventory): 
+``` 
+[web_servers]
+172.21.67.249
 
+[database_servers]
+172.21.75.98
+``` 
+- Go to LAB to create and use inventory file with playbook:
+  - [LAB: Targeting Specific Nodes (Grouping)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Targeting-Specific-Node.md)
 
 ## Tags <a name="tags"></a>
+- With tags, some specific part of the code (playbook's play) could be run.
 
-- [LAB: Adding Tags](https://github.com/omerbsezer/Fast-Ansible/blob/main/Tags.md)
+```
+ansible-playbook --tags ubuntu --ask-become-pass site.yml
+```
+
+![image](https://user-images.githubusercontent.com/10358317/203546898-9dc1b0b5-929a-42ba-9cc4-7d919377aaba.png)
+
+- Go to LAB to learn how to use tags:
+  - [LAB: Adding Tags](https://github.com/omerbsezer/Fast-Ansible/blob/main/Tags.md)
 
 ## Managing Files <a name="files"></a>
-
-- [LAB: Managing Files](https://github.com/omerbsezer/Fast-Ansible/blob/main/Managing-Files.md)
+- It is possible to transfer file from control node to all workers nodes, to download zip file from internet and to unzip files with playbooks.
+  
+  ![image](https://user-images.githubusercontent.com/10358317/203547001-fb106bbe-1171-4ca0-9d8d-5343907c6cf9.png)
+  
+- Go to LAB to learn how:
+  - [LAB: Managing Files](https://github.com/omerbsezer/Fast-Ansible/blob/main/Managing-Files.md)
 
 ## Managing Services <a name="services"></a>
+- It is possible to manage services (create, start, stop, restart, configure service file)
 
-- [LAB: Managing Services](https://github.com/omerbsezer/Fast-Ansible/blob/main/Managing-Services.md)
+```
+- name: start apache (Ubuntu)
+  tags: ubuntu,apache,apache2
+  service:
+    name: apache2
+    state: started
+    enabled: yes
+  when: ansible_distribution == "Ubuntu"
+```
+
+- Go to LAB to learn how:
+  - [LAB: Managing Services](https://github.com/omerbsezer/Fast-Ansible/blob/main/Managing-Services.md)
 
 ## Adding Users <a name="users"></a>
+- It is possible to manage users (add users, create SSH keys for users, add user as sudoers)
 
-- [LAB: Adding Users](https://github.com/omerbsezer/Fast-Ansible/blob/main/Adding-User.md)
+```
+- name: create new user
+  user:
+    name: newuser111
+    groups: root
+```
+
+- Go to LAB to learn how:
+  - [LAB: Adding Users](https://github.com/omerbsezer/Fast-Ansible/blob/main/Adding-User.md)
 
 ## Roles <a name="roles"></a>
+- Roles are defined to simplify, control your Ansible code like sofware code. 
+- Roles are assigned to the group of nodes and roles help to define the task of these nodes. 
 
-- [LAB: Roles](https://github.com/omerbsezer/Fast-Ansible/blob/main/Roles.md)
+  ![image](https://user-images.githubusercontent.com/10358317/203546694-cb961a0b-e1e3-4e06-9f2d-0e70f1ef6cc8.png)
+
+- Go to LAB to learn how:
+  - [LAB: Roles](https://github.com/omerbsezer/Fast-Ansible/blob/main/Roles.md)
 
 ## Host Variables <a name="hostvariables"></a>
+- It helps to define variables which are dependent to the hosts. 
+  ![image](https://user-images.githubusercontent.com/10358317/203547741-9a52592b-7385-4e77-89ad-d8128ecf16b7.png)
+  ![image](https://user-images.githubusercontent.com/10358317/203547770-7eef113c-c9ce-4043-9b02-588ba86fd747.png)
 
-- [LAB: Host Variables](https://github.com/omerbsezer/Fast-Ansible/blob/main/Host-Variables.md)
+- Go to LAB to learn how:
+  - [LAB: Host Variables](https://github.com/omerbsezer/Fast-Ansible/blob/main/Host-Variables.md)
 
 ## Handlers <a name="handlers"></a>
+- To trigger/notify other Ansible code, handlers are used
+  ![image](https://user-images.githubusercontent.com/10358317/203547977-c5ced352-d323-4be6-bcd0-31a6d3df2735.png)
 
-- [LAB: Handlers](https://github.com/omerbsezer/Fast-Ansible/blob/main/Handlers.md)
+- Go to LAB to learn how:
+  - [LAB: Handlers](https://github.com/omerbsezer/Fast-Ansible/blob/main/Handlers.md)
 
 ## Templates <a name="templates"></a>
 
