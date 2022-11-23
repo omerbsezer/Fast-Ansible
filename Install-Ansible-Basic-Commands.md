@@ -1,4 +1,4 @@
-## LAB: Install Ansible and Test Basic Ansible Commands
+## LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands
 
 This scenario shows:
 - how to install ansible
