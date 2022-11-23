@@ -59,14 +59,13 @@ Why should we use / learn Ansible?
 - Ansible uses SSH to communicate with other nodes.
 - Ansible handles many tasks using its modules.
 
-![image](https://user-images.githubusercontent.com/10358317/202701707-b160e35c-7a05-43e8-93c7-b626c8054aa9.png) (ref: medium)
+  ![image](https://user-images.githubusercontent.com/10358317/202701707-b160e35c-7a05-43e8-93c7-b626c8054aa9.png) (ref: medium)
 
 - Ansible also is used by other important applications (e.g. Open Source Gating CI Tools: [Zuul-CI](https://zuul-ci.org/))
 
 - Ansible is used for configuration management on the nodes, Terraform is provisioning tool that uses to create/provision Cloud Infrastructure objects/items (e.g. Virtual Private Cloud, Virtual Machines, Subnets, etc.)
 
-
-![image](https://user-images.githubusercontent.com/10358317/202700302-d651cf08-dd55-44ea-a88c-8ee4186d9438.png) (ref: ibm.github.io)
+  ![image](https://user-images.githubusercontent.com/10358317/202700302-d651cf08-dd55-44ea-a88c-8ee4186d9438.png) (ref: ibm.github.io)
 
 - Ansible can be easily integrated with different technologies (e.g. [Terraform](https://www.terraform.io/)).
 
@@ -88,7 +87,7 @@ Why should we use / learn Ansible?
   - **Role**: a collection of playbooks and other files that are relevant to a goal such as installing a web server.
   - **Play**: a full Ansible run. A play can have several playbooks and roles, included from a single playbook that acts as entry point.
 
-![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
+  ![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
 
 ## Creating LAB Environment <a name="labEnvironment"></a>
 
@@ -173,6 +172,7 @@ ansible all -m file -a "path=/tmp/testfile state=touch mode=0755"
 ## Ansible Playbooks <a name="playbooks"></a>
 
 - Instead of using Adhoc Commands, playbooks are used to store, manage easily (declerative way)
+  
   ![image](https://user-images.githubusercontent.com/10358317/203531052-f9fc2527-06cc-4503-b042-bca5997b5bd0.png) 
 
 - Playbooks are YAML files that include name, hosts (group name that is defined in inventoryfile), vars (variables that are used in playbooks) and tasks:
@@ -196,7 +196,8 @@ ansible all -m file -a "path=/tmp/testfile state=touch mode=0755"
 ```  
 
 - Playbooks include hostname, user information, and tasks (with modules):
-![image](https://user-images.githubusercontent.com/10358317/203531873-cf746f02-67cd-4d2d-98f8-fd7b4900b614.png) 
+
+  ![image](https://user-images.githubusercontent.com/10358317/203531873-cf746f02-67cd-4d2d-98f8-fd7b4900b614.png) 
     
 - Go to LAB to learn how playbook is created:
   - [LAB: Implement First Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Implement-First-Playbook.md)
