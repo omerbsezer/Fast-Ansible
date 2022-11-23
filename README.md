@@ -37,6 +37,7 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbook, and 
 - [Host Variables](#hostvariables)
 - [Handlers](#handlers)
 - [Templates](#templates)
+- [Debugging](#debugging)
 - [Other Useful Resources Related Ansible](#resource)
 - [References](#references)
 
@@ -293,6 +294,16 @@ ansible-playbook --tags ubuntu --ask-become-pass site.yml
 ## Templates <a name="templates"></a>
 
 - [LAB: Templates](https://github.com/omerbsezer/Fast-Ansible/blob/main/Templates.md)
+
+## Debugging <a name="debugging"></a>
+
+- For verbosity, use -v, -vv (increase level), -vvv.
+
+```
+ansible all -m shell -a uptime -v
+ansible all -m shell -a uptime -vv
+ansible all -m shell -a uptime -vvv
+```
 
 ## Other Useful Resources Related Ansible <a name="resource"></a>
 - https://docs.ansible.com/ansible/2.9/
