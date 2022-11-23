@@ -285,6 +285,10 @@ ansible-playbook --tags ubuntu --ask-become-pass site.yml
 - [LAB: Templates](https://github.com/omerbsezer/Fast-Ansible/blob/main/Templates.md)
 
 ## Other Useful Resources Related Ansible <a name="resource"></a>
+- https://docs.ansible.com/ansible/2.9/
+- Video Tutorial: https://www.youtube.com/watch?v=3RiVKs8GHYQ&list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70
+- https://www.tutorialspoint.com/ansible/
+- https://www.middlewareinventory.com/blog/category/ansible/
 
 ## Reference <a name="references"></a>
 - OpenSource: https://opensource.com/resources/what-ansible
