@@ -296,7 +296,7 @@ ansible-playbook --tags ubuntu --ask-become-pass site.yml
   - Replace the Jinja2 interpolation syntax variables present ({{ }}) in the template file with actual values.
   - Copy (scp) the file to the remote server.
 
-- Jinja2 interpolation syntax variables in the playbook:
+- Jinja2 interpolation syntax variables in the playbook (ref: middlewareinventory):
   
   ![image](https://user-images.githubusercontent.com/10358317/203617129-308c53fb-7720-4d12-a55e-b4aa71dc9957.png)
   
@@ -337,3 +337,4 @@ ansible all -m shell -a uptime -vvv
 - RedHat Presentation: https://speakerdeck.com/chrisshort/using-ansible-for-devops?slide=27
 - https://www.middlewareinventory.com/blog/ansible-playbook-example/
 - https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide
+- https://www.middlewareinventory.com/blog/ansible-template-module-example/
