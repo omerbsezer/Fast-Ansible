@@ -5,7 +5,7 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbook, and 
 
 # Hands-on LABs
 - [LAB: Multipass-SSH Configuration (Create Ansible Test Environment)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Multipass-SSH-Configuration.md)
-- [LAB: Install Ansible and Test Basic Ansible Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
+- [LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
 - [LAB: Implement First Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Implement-First-Playbook.md)
 - [LAB: Refactoring / Improving Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Refactoring-Playbook.md)
 - [LAB: Targeting Specific Nodes (Grouping)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Targeting-Specific-Node.md)
@@ -76,6 +76,10 @@ Why should we use / learn Ansible?
 - In Ansible, there are two categories of computers: the control node and managed nodes. The control node is a computer that runs Ansible. There must be at least one control node, although a backup control node may also exist. A managed node is any device being managed by the control node. 
 - Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending a small program called an Ansible module to that node. Ansible executes these modules over SSH and removes them when finished.(ref: Opensource.com)
 - The only requirement for this interaction is that your Ansible control node has login access to the managed nodes. SSH keys are the most common way to provide access, but other forms of authentication are also supported. (ref: Opensource.com)
+- There are files that are for configuruation and usage of Ansible:
+  - **Inventory File**: It contains and groups worker nodes' IP and domain names. Ansible knows and sends commands using these file. 
+  - **Configuration (.cfg) File**: It contains configuration (e.g. inventory file, key_file, remote_user, etc.)
+  - **Playbook**: Playbooks are one of the core features of Ansible and tell Ansible what to execute. Playbooks are written in YAML format.  
 
 ![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
 
@@ -88,7 +92,19 @@ Why should we use / learn Ansible?
 
 ## Ansible Basic (Ad-Hoc) Commands <a name="commands"></a>
 
-- [LAB: Install Ansible and Test Basic Ansible Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
+- We can send commands all worker nodes.  
+- Code structure: 
+  ![image](https://user-images.githubusercontent.com/10358317/203532819-acf44653-de14-426b-9656-35fa82bd4721.png) 
+
+- Sample Commands:
+``` 
+ansible all -m gather_facts --limit 172.26.215.23
+ansible all -m apt -a update_cache=true
+ansible all -m apt -a update_cache=true --become --ask-become-pass
+ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
+``` 
+
+- [LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
 
 ## Ansible Modules <a name="modules"></a>
 
@@ -120,7 +136,15 @@ Why should we use / learn Ansible?
 
 ## Ansible Playbooks <a name="playbooks"></a>
 
-- [LAB: Implement First Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Implement-First-Playbook.md)
+- Instead of using Adhoc Commands, playbooks are used to store, manage easily (declerative way)
+  ![image](https://user-images.githubusercontent.com/10358317/203531052-f9fc2527-06cc-4503-b042-bca5997b5bd0.png) 
+
+- Playbooks include hostname, user information, and tasks (with modules):
+![image](https://user-images.githubusercontent.com/10358317/203531873-cf746f02-67cd-4d2d-98f8-fd7b4900b614.png) 
+
+- Go to LAB to learn how playbook is created:
+  - [LAB: Implement First Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Implement-First-Playbook.md)
+
 - [LAB: Refactoring / Improving Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Refactoring-Playbook.md)
 
 ## Inventory File - Targeting Specific Nodes <a name="inventory"></a>
@@ -169,3 +193,4 @@ Why should we use / learn Ansible?
 - https://ibm.github.io/cloud-enterprise-examples/iac-conf-mgmt/ansible/
 - Medium: https://medium.com/codex/automation-with-ansible-b39706ff777
 - RedHat Presentation: https://speakerdeck.com/chrisshort/using-ansible-for-devops?slide=27
+- https://www.middlewareinventory.com/blog/ansible-playbook-example/
