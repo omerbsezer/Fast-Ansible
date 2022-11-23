@@ -1,0 +1,14 @@
+- name: add ssh key for new user
+  authorized_key:
+    user: newuser111
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCdEJ8xu1C0kJ4Y39x2bfptMQVdxnPDXrkjmDvB44oDV78yKWg/0B/kacMqiEaaiEyAedHlk/FlKai9q82Lm5+0XD/WgXKlPUpyDJcUr8PmVEtBZwXwePXxiDTSy3/pUqrlrxtwbwlPDOeD6gpTbJLYetO6Beb7LmhcpV2RF6Gjvi3tB2NdND6O+umQJu1OD0sNIvfa34zft2Ov/17CC1mOHi3N4aisEfBSMT6yjtffLL9chyO5jwaX8RKNp80yqy4zp6sjfb4BuUZVaX1aTGWZjU7dFf34wz20rbak2ddXrtpt740gGWa8+ie/WBXiwzzxFatD7P2TSnY54jKaO1YPtYhYQ5SzlzNl0gEV3p9cLzbABnrVMDlRkZQ/pa75uyERAvxYYyAiJxlDibEMcDbUj1al+uzMwz7d+ISpsXc4LZmEzDZuDZm5ZLKFFiqxPWPEujDmAWNxXpw040vCmhhL3/BDkW1BkcTR16q2dqFuDxyqJJHLGNwj0g837iTGYzE= ubuntu@controlnode"
+
+- name: generate sshd_config file using templates
+  tags: ssh
+  template:
+    src: "{{ ssh_template_file }}"
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart_sshd

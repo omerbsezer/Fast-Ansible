@@ -1,0 +1,107 @@
+---
+- hosts: all
+  become: true
+  vars:
+    container_count: 4
+    default_container_name: docker
+    default_container_image: ubuntu
+    default_container_command: sleep 1d
+
+  tasks:
+    - name: Install aptitude
+      tags: install
+      apt:
+        name: aptitude
+        state: latest
+        update_cache: true
+
+    - name: Install required system packages
+      tags: install
+      apt:
+        pkg:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+        state: latest
+        update_cache: true
+
+    - name: Add Docker GPG apt Key
+      tags: install
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      tags: install
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      tags: install
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+
+    - name: Install Docker Module for Python
+      tags: install
+      pip:
+        name: docker
+
+    - name: Pull default Docker image
+      tags: pull
+      docker_image:
+        name: "{{ default_container_image }}"
+        source: pull
+
+    - name: Run default containers
+      tags: run
+      docker_container:
+        name: "{{ default_container_name }}{{ item }}"
+        image: "{{ default_container_image }}"
+        command: "{{ default_container_command }}"
+        state: present
+      with_sequence: count={{ container_count }}
+
+    - name: docker container ls -a
+      tags: container_ls
+      become: True
+      shell:
+        "docker container ls -a"
+      register: container_info
+
+    - name: docker container ls -a result
+      tags: container_ls
+      debug:
+        msg: "{{container_info.stdout_lines}}"
+
+    - name: docker images
+      tags: image_ls
+      become: True
+      shell:
+        "docker images"
+      register: image_info
+
+    - name: docker images result
+      tags: image_ls
+      debug:
+        msg: "{{image_info.stdout_lines}}"
+
+    - name: Stop containers
+      tags: stop
+      docker_container:
+        name: "{{ default_container_name }}{{ item }}"
+        state: stopped
+      with_sequence: count={{ container_count }}
+
+    - name: Remove containers
+      tags: remove
+      docker_container:
+        name: "{{ default_container_name }}{{ item }}"
+        state: absent
+      with_sequence: count={{ container_count }}
