@@ -97,7 +97,8 @@ sudo docker container ls -a
 
 ### Sample Docker Tasks:
 
-- Sample Docker Tasks are taken from here: https://docs.ansible.com/ansible/2.9/modules/docker_container_module.html#docker-container-module
+- Sample Docker Tasks are taken from here: 
+  - https://docs.ansible.com/ansible/2.9/modules/docker_container_module.html#docker-container-module
 
 ```
 - name: Create a data container
@@ -136,7 +137,9 @@ sudo docker container ls -a
         SECRET_KEY: "ssssh"
         # Values which might be parsed as numbers, booleans or other types by the YAML parser need to be quoted
         BOOLEAN_KEY: "yes"
+```
 
+```
 - name: Container present
   docker_container:
     name: mycontainer
@@ -161,7 +164,9 @@ sudo docker container ls -a
   docker_container:
     name: ohno
     state: absent
+```
 
+```
 - name: Syslogging output
   docker_container:
     name: myservice
@@ -193,7 +198,9 @@ sudo docker container ls -a
         links:
           - db_test:db
       - name: TestingNet2
+```
 
+```
 - name: Start a container with a command
   docker_container:
     name: sleepy
@@ -219,7 +226,9 @@ sudo docker container ls -a
         aliases:
           - sleepyz
           - zzzz
+```
 
+```
 - name: Remove container from one network
   docker_container:
     name: sleepy
@@ -247,7 +256,9 @@ sudo docker container ls -a
       - sys_time
     cap_drop:
       - all
+```
 
+```
 - name: Finer container restart/update control
   docker_container:
     name: test
@@ -295,7 +306,9 @@ sudo docker container ls -a
     healthcheck:
       # The "NONE" check needs to be specified
       test: ["NONE"]
+```
 
+```
 - name: start container with block device read limit
   docker_container:
     name: test
@@ -311,6 +324,9 @@ sudo docker container ls -a
         rate: 300
 ```
 
+### All Docker Modules:
+
+- https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#docker
 
 ### Reference
 
