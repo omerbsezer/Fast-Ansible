@@ -286,7 +286,8 @@ ansible-playbook --tags ubuntu --ask-become-pass site.yml
   - [LAB: Host Variables](https://github.com/omerbsezer/Fast-Ansible/blob/main/Host-Variables.md)
 
 ## Handlers <a name="handlers"></a>
-- To trigger/notify other Ansible code, handlers are used
+- To trigger/notify other Ansible code, handlers are used.
+
   ![image](https://user-images.githubusercontent.com/10358317/203547977-c5ced352-d323-4be6-bcd0-31a6d3df2735.png)
 
 - Go to LAB to learn how:
