@@ -19,9 +19,6 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbooks, Tag
 - [LAB: Host Variables](https://github.com/omerbsezer/Fast-Ansible/blob/main/Host-Variables.md)
 - [LAB: Handlers](https://github.com/omerbsezer/Fast-Ansible/blob/main/Handlers.md)
 - [LAB: Templates](https://github.com/omerbsezer/Fast-Ansible/blob/main/Templates.md)
-- [Ansible Commands Cheatsheet]()
-
-
 
 # Table of Contents
 - [Motivation](#motivation)
@@ -41,6 +38,7 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbooks, Tag
 - [Handlers](#handlers)
 - [Templates](#templates)
 - [Debugging](#debugging)
+- [Details](#details)
 - [Other Useful Resources Related Ansible](#resource)
 - [References](#references)
 
@@ -333,6 +331,56 @@ ansible all -m shell -a uptime -vv
 ansible all -m shell -a uptime -vvv
 ```
 
+## Details <a name="details"></a>
+
+```
+ansible-playbook <YAML> -f 10                       # Run 10 hosts parallel, default f=5 hosts parallel
+ansible-playbook <YAML> -C                          # Test run
+ansible-playbook <YAML> -C -D                       # Dry run
+ansible-playbook <YAML> --user <username>           # Log in as username (or -u <username>)
+ansible-playbook <YAML> --private-key <key>         # Log in using SSH key (usually in ~/.ssh) (or --key-file <key>)
+ansible-playbook <YAML> --ssh-extra-args            # Pass extra command options to SSH
+ansible-playbook <YAML> --vault-id <id>             # Use vault identity ID
+ansible-playbook <YAML> --vault-password-file <key> # Use vault password file key
+ansible-playbook <YAML> --ask-vault-pass            # Prompt for a vault password
+ansible-playbook <YAML> --become                    # Escalate privileges
+ansible-playbook <YAML> --ask-become-pass           # Prompt for a password for become
+ansible-playbook <YAML> -l <host>                   # Run on single host
+ansible-playbook <YAML> --list-hosts                # Run Infos
+ansible-playbook <YAML> --list-tasks                # Run Infos
+ansible-playbook <YAML> --syntax-check              # Syntax Check
+ansible-playbook <YAML> --check                     # Run the playbook but don’t make changes
+ansible-playbook <YAML> --diff                      # Show diffs for what changes are made
+
+```
+
+### Capture Shell Output
+```
+  tasks:
+  - name: some shell
+    register: sh_out
+    ignore_errors: yes
+    become_user: root
+    shell: |
+      find /
+
+  - name: "Print stdout"
+    debug:
+      msg: "{{ sh_out.stdout.split('\n') }}"
+  - name: "Print stderr"
+    debug:
+      msg: "{{ sh_out.stderr.split('\n') }}"
+```
+
+### Deleting files & directories
+```
+tasks:
+- name: rm
+  file:
+    path: <some path>
+    state: absent
+    recurse: yes        # optional
+```
 ## Other Useful Resources Related Ansible <a name="resource"></a>
 - https://docs.ansible.com/ansible/2.9/
 - Video Tutorial: https://www.youtube.com/watch?v=3RiVKs8GHYQ&list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70
