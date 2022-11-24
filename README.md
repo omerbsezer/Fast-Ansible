@@ -1,5 +1,5 @@
 # Fast-Ansible
-This repo covers Ansible with HowTo: Hands-on LABs (using Multipass Ubuntu Lightweight VMs): Ad-Hoc Commands, Modules, Playbooks, Tags, Managing Files and Servers, Users, Roles, Handlers, Host Variables, Templates and many details. Possible usage scenarios are aimed to update over time.
+This repo covers Ansible with HowTo: Hands-on LABs (using Multipass: Ubuntu Lightweight VMs): Ad-Hoc Commands, Modules, Playbooks, Tags, Managing Files and Servers, Users, Roles, Handlers, Host Variables, Templates and many details. Possible usage scenarios are aimed to update over time.
 
 **Keywords:** Ansible, Multi-PC Configuration.
 
