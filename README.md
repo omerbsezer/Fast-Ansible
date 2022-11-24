@@ -388,7 +388,7 @@ tasks:
 - https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide
 - https://www.middlewareinventory.com/blog/category/ansible/
 
-## Reference <a name="references"></a>
+## References <a name="references"></a>
 - OpenSource: https://opensource.com/resources/what-ansible
 - Video Tutorial: https://www.youtube.com/watch?v=3RiVKs8GHYQ&list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70
 - https://www.kreyman.de/index.php/others/linux-kubernetes/213-ansible-verwendungsszenarien
