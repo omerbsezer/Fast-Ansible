@@ -8,6 +8,7 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbooks, Tag
 - [LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
 - [LAB: Implement First Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Implement-First-Playbook.md)
 - [LAB: Playing Docker Module](https://github.com/omerbsezer/Fast-Ansible/blob/main/Docker-Module.md)
+- [LAB: Important (Mostly Possible Used) Modules Sample Tasks](https://github.com/omerbsezer/Fast-Ansible/blob/main/Important-Modules-Sample-Tasks.md)
 - [LAB: Refactoring / Improving Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Refactoring-Playbook.md)
 - [LAB: Targeting Specific Nodes (Grouping)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Targeting-Specific-Node.md)
 - [LAB: Adding Tags](https://github.com/omerbsezer/Fast-Ansible/blob/main/Tags.md)
@@ -19,6 +20,8 @@ This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbooks, Tag
 - [LAB: Handlers](https://github.com/omerbsezer/Fast-Ansible/blob/main/Handlers.md)
 - [LAB: Templates](https://github.com/omerbsezer/Fast-Ansible/blob/main/Templates.md)
 - [Ansible Commands Cheatsheet]()
+
+
 
 # Table of Contents
 - [Motivation](#motivation)
@@ -154,6 +157,9 @@ ansible all --list-hosts
 
 - Go to LAB to learn:
   - [LAB: Playing Docker Module](https://github.com/omerbsezer/Fast-Ansible/blob/main/Docker-Module.md)
+
+- Go to LAB to learn:  
+  - [LAB: Important (Mostly Possible Used) Modules Sample Tasks](https://github.com/omerbsezer/Fast-Ansible/blob/main/Important-Modules-Sample-Tasks.md)
   
 - All Modules in Ansible: 
   - [Cloud Modules (AWS, Azure, Digital Ocean, Docker, Google Cloud, OpenStack, Vmware)](https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html)
