@@ -1,9 +1,9 @@
 # Fast-Ansible
-This repo covers Ansible with LABs: Multipass, Commands, Modules, Playbooks, Tags, Managing Files and Servers, Users, Roles, Handlers, Host Variables, Templates and many details.
+This repo covers Ansible with HowTo: Hands-on LABs (using Multipass Ubuntu Lightweight VMs): Ad-Hoc Commands, Modules, Playbooks, Tags, Managing Files and Servers, Users, Roles, Handlers, Host Variables, Templates and many details. Possible usage scenarios are aimed to update over time.
 
 **Keywords:** Ansible, Multi-PC Configuration.
 
-# Hands-on LABs
+# Quick Look (HowTo): Scenarios - Hands-on LABs
 - [LAB: Multipass-SSH Configuration (Create Ansible Test Environment)](https://github.com/omerbsezer/Fast-Ansible/blob/main/Multipass-SSH-Configuration.md)
 - [LAB: Install Ansible and Test Basic Ansible (Ad-Hoc) Commands](https://github.com/omerbsezer/Fast-Ansible/blob/main/Install-Ansible-Basic-Commands.md)
 - [LAB: Implement First Playbook](https://github.com/omerbsezer/Fast-Ansible/blob/main/Implement-First-Playbook.md)
