@@ -24,7 +24,7 @@ This repo covers Ansible with HowTo: Hands-on LABs (using Multipass: Ubuntu Ligh
 - [Motivation](#motivation)
 - [What is Ansible?](#whatIsAnsible)
 - [How Ansible Works?](#howAnsibleWorks)
-- [Creating LAB Environment](#labEnvironment)
+- [Creating LAB Environment](#lab_environment)
 - [Ansible Basic (Ad-Hoc) Commands](#commands)    
 - [Ansible Modules](#modules)
 - [Ansible Playbooks](#playbooks)
@@ -90,7 +90,7 @@ Why should we use / learn Ansible?
 
   ![image](https://user-images.githubusercontent.com/10358317/202699093-62fcc145-c023-43ed-af51-0866393f0701.png) (ref: kreyman.de)
 
-## Creating LAB Environment <a name="labEnvironment"></a>
+## Creating LAB Environment <a name="lab_environment"></a>
 
 - For testing Ansible, Ansible modules, it is required to get multiple PC or virtual machine. 
 - So we are using Multipass that is lightweight, fast, easy to use Ubuntu VM (on demand for any workstation).
