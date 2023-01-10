@@ -22,8 +22,8 @@ This repo covers Ansible with HowTo: Hands-on LABs (using Multipass: Ubuntu Ligh
 
 # Table of Contents
 - [Motivation](#motivation)
-- [What is Ansible?](#whatIsAnsible)
-- [How Ansible Works?](#howAnsibleWorks)
+- [What is Ansible?](#what_is_ansible)
+- [How Ansible Works?](#how_ansible_works)
 - [Creating LAB Environment](#lab_environment)
 - [Ansible Basic (Ad-Hoc) Commands](#commands)    
 - [Ansible Modules](#modules)
@@ -34,7 +34,7 @@ This repo covers Ansible with HowTo: Hands-on LABs (using Multipass: Ubuntu Ligh
 - [Managing Services](#services)
 - [Adding Users](#users)
 - [Roles](#roles)
-- [Host Variables](#hostvariables)
+- [Host Variables](#host_variables)
 - [Handlers](#handlers)
 - [Templates](#templates)
 - [Debugging](#debugging)
@@ -70,10 +70,10 @@ Why should we use / learn Ansible?
 
 - Ansible can be easily integrated with different technologies (e.g. [Terraform](https://www.terraform.io/)).
 
-## What is Ansible? <a name="whatIsAnsible"></a>
+## What is Ansible? <a name="what_is_ansible"></a>
 - "Ansible is a software tool that provides simple but powerful automation for cross-platform computer support." (ref: Opensource.com)
 
-## How Ansible Works? <a name="howAnsibleWorks"></a>
+## How Ansible Works? <a name="how_ansible_works"></a>
 
 - In Ansible, there are two categories of computers: the control node and managed nodes. The control node is a computer that runs Ansible. There must be at least one control node, although a backup control node may also exist. A managed node is any device being managed by the control node. 
 - Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending a small program called an Ansible module to that node. Ansible executes these modules over SSH and removes them when finished.(ref: Opensource.com)
@@ -283,7 +283,7 @@ ansible-playbook --tags ubuntu --ask-become-pass site.yml
 - Go to LAB to learn how:
   - [LAB: Roles](https://github.com/omerbsezer/Fast-Ansible/blob/main/Roles.md)
 
-## Host Variables <a name="hostvariables"></a>
+## Host Variables <a name="host_variables"></a>
 - It helps to define variables which are dependent to the hosts. 
 
   ![image](https://user-images.githubusercontent.com/10358317/203547741-9a52592b-7385-4e77-89ad-d8128ecf16b7.png)
