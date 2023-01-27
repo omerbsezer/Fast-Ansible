@@ -366,11 +366,18 @@ ansible-playbook <YAML> --diff                      # Show diffs for what change
 
   - name: "Print stdout"
     debug:
-      msg: "{{ sh_out.stdout.split('\n') }}"
+      msg: "{{ sh_out.stdout_lines }}"
   - name: "Print stderr"
     debug:
       msg: "{{ sh_out.stderr.split('\n') }}"
 ```
+- Debug output section in the playbook:
+
+  ![image](https://user-images.githubusercontent.com/10358317/215115854-588292ce-1707-420a-bf2c-e77c40e5bb09.png)
+
+- Output: 
+
+  ![image](https://user-images.githubusercontent.com/10358317/215116236-af140eb4-ec7e-4584-a8cc-65cbe0575a66.png)
 
 ### Deleting files & directories
 ```
